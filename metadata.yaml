@@ -1,0 +1,17 @@
+name: hadoop-base
+series:
+  - bionic
+summary: Apache Hadoop base layer.
+maintainers:
+  - Omnivector Solutions <admin@omnivector.solutions>
+description: |
+  Charm base layer for Apache Hadoop providing the hadoop tarball resource.
+tags:
+  - hadoop
+  - omnivector
+  - bigdata
+resources:
+  hadoop-tarball:
+    type: file
+    filename: hadoop.tgz
+    description: Hadoop tar package

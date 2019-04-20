@@ -1,0 +1,13 @@
+options:
+  aws-access-key:
+    type: string
+    default: ""
+    description: "AWS access key"
+  aws-secret-key:
+    type: string
+    default: ""
+    description: "AWS secret key"
+  object-storage-gateway:
+    type: string
+    default: ""
+    description: "The HTTP  or HTTPS object storage gateway"
