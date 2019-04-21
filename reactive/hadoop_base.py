@@ -4,9 +4,7 @@ from charms.reactive import (
     set_flag,
 )
 
-from charmhelpers.core.host import (
-    adduser,
-)
+from charmhelpers.core.host import adduser
 
 from charmhelpers.core import unitdata
 
@@ -36,7 +34,7 @@ def hadoop_apt_deps_available():
 
 @when_not('hadoop.user.available')
 def create_hadoop_user():
-    """Create spark user.
+    """Create hadoop user.
     """
     adduser('hadoop', system_user=True)
     set_flag('hadoop.user.available')
