@@ -9,13 +9,11 @@ from charmhelpers.core.hookenv import resource_get
 from charmhelpers.core.templating import render
 from charmhelpers.core.host import chownr
 
-from charms.layer import status
-
 
 HADOOP_HOME = Path('/opt/hadoop')
 HADOOP_BIN = HADOOP_HOME / 'bin' / 'hadoop'
 HADOOP_CONFIG_DIR = HADOOP_HOME / 'etc' / 'hadoop'
-HADOOP_ENV_SH = HADOOP_CONFIG_DIR / 'hadoop-env.sh' 
+HADOOP_ENV_SH = HADOOP_CONFIG_DIR / 'hadoop-env.sh'
 HADOOP_LOG_DIR = Path('/var/log/hadoop')
 
 
@@ -27,8 +25,7 @@ def provision_hadoop_resource():
     hadoop_tarball = resource_get('hadoop-tarball')
 
     if not hadoop_tarball:
-        status.blocked("Could not find resource 'hadoop-tarball'")
-        return
+        return False
 
     if HADOOP_HOME.exists():
         check_call(['rm', '-rf', str(HADOOP_HOME)])
